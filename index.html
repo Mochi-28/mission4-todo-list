@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Tasks | To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="profile">
+        <div class="avatar">H</div>
+        <div>
+          <p class="eyebrow">PERSONAL WORKSPACE</p>
+          <h2>Haidar 'Ali</h2>
+          <p class="muted">Mahasiswa</p>
+        </div>
+      </div>
+
+      <div class="date-box">
+        <span>HARI INI</span>
+        <strong id="today">Memuat tanggal...</strong>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR DAILY PLANNER</p>
+      <h1>Rencanakan hari,<br><span>selesaikan tugas.</span></h1>
+      <p>Atur prioritas dan pantau progres pekerjaanmu.</p>
+    </section>
+
+    <section class="task-form card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TASK MANAGEMENT</p>
+          <h2>Tambah tugas baru</h2>
+        </div>
+        <span class="plus-icon">+</span>
+      </div>
+
+      <form id="taskForm">
+        <label for="taskInput">Apa yang ingin kamu kerjakan?</label>
+        <textarea
+          id="taskInput"
+          placeholder="Contoh: Menyelesaikan tugas bootcamp..."
+          rows="3"
+          required
+          maxlength="300"
+        ></textarea>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="priority">Level prioritas</label>
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="dueDate">Batas waktu</label>
+            <input type="date" id="dueDate">
+          </div>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          + Tambahkan Tugas
+        </button>
+      </form>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Total tugas aktif</span>
+        <strong id="activeCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Tugas selesai</span>
+        <strong id="doneCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Tugas terlambat</span>
+        <strong id="lateCount">0</strong>
+      </article>
+    </section>
+
+    <section class="task-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">IN PROGRESS</p>
+          <h2>To Do <span class="count" id="todoCount">0</span></h2>
+        </div>
+        <button id="deleteAllBtn" class="text-btn" type="button">
+          Hapus semua
+        </button>
+      </div>
+      <div id="todoList" class="task-list"></div>
+    </section>
+
+    <section class="task-section done-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMPLETED</p>
+          <h2>Done <span class="count" id="doneListCount">0</span></h2>
+        </div>
+      </div>
+      <div id="doneList" class="task-list"></div>
+    </section>
+
+    <footer>
+      <p>MY DAILY TASKS · Stay focused, one task at a time.</p>
+    </footer>
+  </main>
+</body>
+</html>
